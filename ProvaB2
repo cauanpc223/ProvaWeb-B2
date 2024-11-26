@@ -1,0 +1,54 @@
+// Questão 1: 
+
+function getColors() {
+    const vetorCores = []
+
+    for(let i = 1; i <= 148; i++){
+        const colorName = document.querySelector(`#box${i} > span > a`).innerText.toLowerCase()
+        
+        vetorCores.push(colorName)
+    }
+
+    return vetorCores;
+}
+
+
+// Questão 2: 
+
+function getRandomColors(colorsArray) {
+    const selectedColors = [];
+
+    while (selectedColors.length < 10) {
+        const randomIndex = Math.floor(Math.random() * colorsArray.length);
+        const randomColor = colorsArray[randomIndex];
+
+        if (!selectedColors.includes(randomColor)) {
+            selectedColors.push(randomColor);
+        }
+    }
+
+    return selectedColors;
+}
+
+
+// Questão 3: 
+
+function chooseRandomColorFromColorsArray(colorsArray) {
+    const selectedColors = [];
+
+    while (selectedColors.length < 10) {
+        const randomIndex = Math.floor(Math.random() * colorsArray.length);
+        const randomColor = colorsArray[randomIndex];
+
+        if (!selectedColors.includes(randomColor)) {
+            selectedColors.push(randomColor);
+        }
+    }
+
+    const finalRandomColor = selectedColors[Math.floor(Math.random() * selectedColors.length)];
+
+    console.log(`A cor escolhida aleatoriamente é: ${finalRandomColor}`);
+    return finalRandomColor;
+}
+
+// chooseRandomColorFromColorsArray(getColors());
